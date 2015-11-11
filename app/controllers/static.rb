@@ -1,3 +1,8 @@
+helpers SessionsHelper
+
 get '/' do
-  erb :"static/index"
+	@user = current_user
+	@property = Property.all
+	@all_users = User.all
+	erb :"static/index"
 end

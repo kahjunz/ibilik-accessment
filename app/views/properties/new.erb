@@ -1,0 +1,14 @@
+<h1>Post your available property for sales</h1>
+
+<% if @property && !@property.errors.empty? %>
+	<% @property.errors.full_messages.each do |x| %>
+		<p><%= x %></p>
+	<% end %>
+<% end %>
+
+<form action="/properties" method="post">
+	<p>Title</p>
+	<input type="text" name="property" placeholder="Eg. Apartment Room for Rent!"><br>
+	<textarea name="property[description]" row="5" cols="40"></textarea>
+	<input type="submit" value="Post!">
+</form>
